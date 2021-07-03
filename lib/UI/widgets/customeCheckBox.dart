@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomecheckBox extends StatefulWidget {
-  bool value;
+  bool? value;
 
   CustomecheckBox({this.value});
 
@@ -13,11 +13,11 @@ class _CustomecheckBoxState extends State<CustomecheckBox> {
   @override
   Widget build(BuildContext context) {
     return CustomCheckBox(
-      value: widget.value,
+      value: widget.value!,
       shouldShowBorder: true,
       borderColor: Color(0xffBFBFBF),
       checkedFillColor:
-          widget.value ? Theme.of(context).accentColor : Colors.white,
+          widget.value! ? Theme.of(context).accentColor : Colors.white,
       borderRadius: 5,
       borderWidth: 1,
       checkBoxSize: 20,
@@ -34,31 +34,31 @@ class _CustomecheckBoxState extends State<CustomecheckBox> {
 }
 
 class CustomCheckBox extends StatefulWidget {
-  final bool value;
-  final ValueChanged<bool> onChanged;
-  final Color checkedIconColor;
-  final Color checkedFillColor;
-  final IconData checkedIcon;
-  final Color uncheckedIconColor;
-  final Color uncheckedFillColor;
-  final IconData uncheckedIcon;
-  final double borderWidth;
-  final double checkBoxSize;
-  final bool shouldShowBorder;
-  final Color borderColor;
-  final double borderRadius;
+  @required final bool value;
+  @required final ValueChanged<bool> onChanged;
+  final Color? checkedIconColor;
+  final Color? checkedFillColor;
+  final IconData? checkedIcon;
+  final Color? uncheckedIconColor;
+  final Color? uncheckedFillColor;
+  final IconData? uncheckedIcon;
+  final double? borderWidth;
+  final double? checkBoxSize;
+  @required final bool shouldShowBorder;
+  final Color? borderColor;
+  final double? borderRadius;
 
   const CustomCheckBox({
-    this.value,
-    this.onChanged,
+    required this.value,
+    required this.onChanged,
     this.checkedIconColor = Colors.white,
     this.checkedFillColor = Colors.teal,
     this.checkedIcon = Icons.check,
     this.uncheckedIconColor = Colors.white,
     this.uncheckedFillColor = Colors.white,
     this.uncheckedIcon = Icons.close,
-    this.borderWidth,
-    this.checkBoxSize,
+    required this.borderWidth,
+    required this.checkBoxSize,
     this.shouldShowBorder = false,
     this.borderColor,
     this.borderRadius,
@@ -69,8 +69,8 @@ class CustomCheckBox extends StatefulWidget {
 }
 
 class _CustomCheckBoxState extends State<CustomCheckBox> {
-  bool _checked;
-  CheckStatus _status;
+  @required bool _checked = false;
+  CheckStatus? _status;
 
   @override
   void initState() {
@@ -94,20 +94,20 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   }
 
   Widget _buildIcon() {
-    Color fillColor;
-    Color iconColor;
-    IconData iconData;
+    Color? fillColor;
+    Color? iconColor;
+    IconData? iconData;
 
     switch (_status) {
       case CheckStatus.checked:
-        fillColor = widget.checkedFillColor;
-        iconColor = widget.checkedIconColor;
-        iconData = widget.checkedIcon;
+        fillColor = widget.checkedFillColor!;
+        iconColor = widget.checkedIconColor!;
+        iconData = widget.checkedIcon!;
         break;
       case CheckStatus.unchecked:
-        fillColor = widget.uncheckedFillColor;
-        iconColor = widget.uncheckedIconColor;
-        iconData = widget.uncheckedIcon;
+        fillColor = widget.uncheckedFillColor!;
+        iconColor = widget.uncheckedIconColor!;
+        iconData = widget.uncheckedIcon!;
         break;
     }
 

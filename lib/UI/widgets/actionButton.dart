@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class ActionButton extends StatelessWidget {
-  String label;
-  Color color;
-  VoidCallback onPressed;
-  double buttonWidth;
+  String? label;
+  Color? color;
+  VoidCallback? onPressed;
+  double? buttonWidth;
   ActionButton({this.label, this.onPressed, this.color, this.buttonWidth});
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ActionButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: color,
           minimumSize: Size(
-            buttonWidth,
+            buttonWidth!,
             50,
           ),
           shape: RoundedRectangleBorder(
@@ -23,7 +23,7 @@ class ActionButton extends StatelessWidget {
           ),
         ),
         child: Text(
-          label,
+          label!,
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w600,

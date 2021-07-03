@@ -1,16 +1,19 @@
-import 'package:audiohat/UI/screens/spalah.dart';
-import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
+import 'package:audiohat/UI/screens/welcom_view.dart';
+import 'package:flutter/material.dart'hide Element;
+import 'dart:ui' as myUI;
+import 'UI/screens/login.dart';
+import 'UI/screens/register.dart';
 
-double deviceWidth;
-double deviceHeight;
+double deviceWidth = myUI.window.physicalSize.width / myUI.window.devicePixelRatio;
+double deviceHeight = myUI.window.physicalSize.height / myUI.window.devicePixelRatio;
 
 void main() {
-  deviceWidth = ui.window.physicalSize.width / ui.window.devicePixelRatio;
-  deviceHeight = ui.window.physicalSize.height / ui.window.devicePixelRatio;
+   runApp(MyApp());
+  //runApp(DevicePreview(builder:(context)=> MyApp()));
 
-  runApp(MyApp());
 }
+
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -18,12 +21,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      //builder: DevicePreview.appBuilder,
       theme: ThemeData(
         fontFamily: 'STC',
         primaryColor: Color(0xff13577C),
         accentColor: Color(0xffE94F36),
       ),
-      home: SplashScreen(),
+      home: LoginScreen()
     );
   }
 }
