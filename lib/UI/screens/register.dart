@@ -1,10 +1,10 @@
 import 'package:audiohat/UI/widgets/actionButton.dart';
 import 'package:audiohat/UI/widgets/customeCheckBox.dart';
+import 'package:audiohat/UI/widgets/input.dart';
 import 'package:audiohat/UI/widgets/titleWidget.dart';
 import 'package:audiohat/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'auth_bg.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -27,97 +27,25 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               Container(
+                margin: EdgeInsets.symmetric(vertical: 8),
                 width: deviceWidth * 0.8,
                 height: deviceHeight * 0.08,
-                child: TextFormField(
-                  textAlign: TextAlign.right,
-                  decoration: InputDecoration(
-                    hintText: 'الاسم',
-                    hintStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff9F9F9F),
-                      height: 1.3,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                      borderSide: BorderSide(
-                          color: Color(0xffBFBFBF).withOpacity(0.5),
-                          width: 1.5),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(
-                          color: Color(0xffBFBFBF).withOpacity(0.5)),
-                    ),
-                  ),
-                ),
+                child:  Input(hint: 'الاسم',),
               ),
-              SizedBox(height:18),
               Container(
+                margin: EdgeInsets.symmetric(vertical: 8),
                 width: deviceWidth * 0.8,
                 height: deviceHeight * 0.08,
-                child: TextFormField(
-                  textAlign: TextAlign.right,
-                  decoration: InputDecoration(
-                    hintText: 'البريد الالكترونى',
-                    hintStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff9F9F9F),
-                      height: 1.3,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                      borderSide: BorderSide(
-                          color: Color(0xffBFBFBF).withOpacity(0.5),
-                          width: 1.5),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(
-                          color: Color(0xffBFBFBF).withOpacity(0.5)),
-                    ),
-                  ),
-                ),
+                child:  Input(hint: 'البريد الالكترونى',),
               ),
-              SizedBox(height:18),
               Container(
+                margin: EdgeInsets.symmetric(vertical: 8),
                 width: deviceWidth * 0.8,
                 height: deviceHeight * 0.08,
-                child: TextFormField(
-                  textAlign: TextAlign.right,
-                  decoration: InputDecoration(
-                    hintText: 'كلمة المرور',
-                    hintStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff9F9F9F),
-                      height: 1.3,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                      borderSide: BorderSide(
-                          color: Color(0xffBFBFBF).withOpacity(0.5),
-                          width: 1.5),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(
-                          color: Color(0xffBFBFBF).withOpacity(0.5)),
-                    ),
-                  ),
-                ),
+                child:  Input(hint: 'كلمة المرور',),
               ),
-
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0,horizontal: 22),
+                padding: const EdgeInsets.symmetric(vertical: 6.0,horizontal: 22),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,

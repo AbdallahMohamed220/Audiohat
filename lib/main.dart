@@ -13,8 +13,6 @@ void main() {
 
 }
 
-
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff13577C),
         accentColor: Color(0xffE94F36),
       ),
-      home: LoginScreen()
+      home: RegisterScreen()
     );
   }
 }
